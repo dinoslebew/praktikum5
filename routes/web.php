@@ -12,3 +12,7 @@ Route::get('/index', function () {
 });
 
 Route::get('/list_product', [product::class, 'list']);
+
+Route::get('/home', function () {
+    return view('pages.home');
+});
