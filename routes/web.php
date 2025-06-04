@@ -18,5 +18,9 @@ Route::get('/home', function () {
     return view('pages.home');
 });
 
-Route::get('/listproduk', [ListProdukController::class, 'show']);
+// Fixed routes for product management
+Route::get('/listproduk', [ListProdukController::class, 'show'])->name('produk.index');
 Route::post('/listproduk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
+Route::delete('/listproduk/{id}', [ListProdukController::class, 'delete'])->name('produk.delete');
+Route::put('/listproduk/{id}', [ListProdukController::class, 'update'])->name('produk.update');
+Route::get('/listproduk/edit/{id}', [ListProdukController::class, 'edit'])->name('produk.edit');
